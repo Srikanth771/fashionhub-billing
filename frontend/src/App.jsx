@@ -13,6 +13,7 @@ import CustomersPage from './pages/CustomersPage';
 import ProductsPage from './pages/ProductsPage';
 import ReportsPage from './pages/ReportsPage';
 import SettingsPage from './pages/SettingsPage';
+import OffersPage from './pages/OffersPage';
 
 // Main Application Layout Wrapper
 const AppLayout = () => {
@@ -48,6 +49,7 @@ function App() {
                 <Route path="/products" element={<ProductsPage />} />
                 <Route path="/reports" element={<ReportsPage />} />
                 <Route path="/settings" element={<SettingsPage />} />
+                <Route path="/offers" element={<OffersPage />} />
               </Route>
             </Route>
 

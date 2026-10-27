@@ -47,10 +47,13 @@ const ThermalReceipt = ({ bill, onPrintComplete }) => {
       <div
         id="thermal-receipt-container"
         className="w-[80mm] max-w-full bg-white text-black p-3.5 font-mono text-[11px] leading-tight border border-slate-300 shadow-xl rounded-sm print:border-none print:shadow-none print:m-0 print:p-2"
-        style={{ fontFamily: "'Courier New', Courier, monospace" }}
+        style={{ fontFamily: "'Courier New', Courier, monospace", breakInside: "avoid" }}
       >
         {/* Header */}
         <div className="text-center pb-2 border-b border-dashed border-black space-y-0.5">
+            {settings.logoUrl && (
+              <img src={settings.logoUrl} alt="Shop Logo" className="mx-auto mb-2 max-w-[60px]" />
+            )}
           <h1 className="text-base font-black tracking-wider uppercase font-sans">
             {settings.shopName || 'THE FASHION HUB'}
           </h1>

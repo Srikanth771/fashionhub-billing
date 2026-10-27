@@ -7,13 +7,10 @@ import {
   Shirt,
   BarChart3,
   Settings,
-  HelpCircle,
+  Megaphone,
 } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
 
 const Sidebar = () => {
-  const { user } = useAuth();
-
   const navItems = [
     {
       to: '/dashboard',
@@ -33,6 +30,14 @@ const Sidebar = () => {
       label: 'Customers',
       icon: Users,
       desc: 'Billed names & numbers',
+    },
+    {
+      to: '/offers',
+      label: 'Send Offers',
+      icon: Megaphone,
+      badge: 'NEW',
+      desc: 'WhatsApp bulk offers',
+      badgeColor: 'bg-emerald-500',
     },
     {
       to: '/products',
@@ -81,7 +86,7 @@ const Sidebar = () => {
                     <span>{item.label}</span>
                   </div>
                   {item.badge && (
-                    <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-amber-500 text-slate-950">
+                    <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full text-slate-950 ${item.badgeColor || 'bg-amber-500'}`}>
                       {item.badge}
                     </span>
                   )}
@@ -93,12 +98,12 @@ const Sidebar = () => {
 
         {/* Quick Tips Box */}
         <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
-          <div className="flex items-center gap-2 text-xs font-semibold text-amber-400 mb-1">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>POS Quick Keys</span>
+          <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 mb-1">
+            <Megaphone className="w-3.5 h-3.5" />
+            <span>Offer Blasts</span>
           </div>
           <p className="text-[11px] text-slate-400 leading-relaxed">
-            Scan barcode or enter SKU directly in Billing to add menswear garments in 1 second.
+            Go to <strong className="text-emerald-400">Send Offers</strong> to post promotions directly to your customers' WhatsApp in one click.
           </p>
         </div>
       </div>
